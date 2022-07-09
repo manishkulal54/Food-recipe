@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recipe</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="MyBootstrapCss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Edu+VIC+WA+NT+Beginner:wght@500&family=Montserrat:wght@200&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <!-- header -->
+        <div class="header">
+            <div class="mainLogo">
+                <a href="https://manishkulal.netlify.app/" target="_manish">
+                    <img src="logo.png" alt="" width="100px" height="100px">
+                </a>
+            </div>
+            <!-- logo text-->
+            <div class="logo">
+                <h1>Food Recipe</h1>
+            </div>
+            <!-- sarchField -->
+            <div class="searchField">
+                <input type="search" name="searchBar" id="searchBar" placeholder="search your meal">
+                <button id="search"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
+            </div>
+            <span class="errorSpan" id="errorSpan"></span>
+        </div>
+        <!-- favMeals -->
+        <div class="favMealsList " id="favMealContainer">
+            <!-- to dlt and uncomment above line -->
+            <!-- fav text -->
+            <div class="favtext">
+                <h4>Favorite Meal</h4>
+            </div>
+            <div class="favMeal_container" id="favMeal_container">
+                <!-- for js -->
+            </div>
+        </div>
+
+
+        <!-- special meal -->
+        <div class="specialMeal " id="specialMeal">
+            <!-- from js we are getting the html code here  -->
+        </div>
+
+
+        <!-- searchMeal -->
+        <div class="smContainer">
+            <div class="smtext">
+                <h2 id="smText"></h2>
+                <button class="dis-none" id="smTextBtn">Clear search</button>
+            </div>
+            <div id="smContainer">
+                <!-- js here -->
+            </div>
+        </div>
+    </div>
+    <div class="infoScreenContainer dis-none" id="infoContainer">
+        <!-- js here -->
+    </div>
+</body>
+<script src="Main.js"></script>
+<script src="https://kit.fontawesome.com/b9f67f2c55.js" crossorigin="anonymous"></script>
+
+</html>
+
+<!-- create for search meal items and then js -->
