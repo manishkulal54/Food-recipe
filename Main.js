@@ -28,7 +28,10 @@ const specialMeal = document.getElementById('specialMeal')
 async function fecthRandomMeal() {
     const randomMeal = document.createElement('div')
     randomMeal.classList.add('spMealContainer')
+
     const meal = await getRandomMeal() //getting meal here
+    const favMeals=getMealIdFromLs()
+
     randomMeal.innerHTML =
         `
     <div class="sp-text">
@@ -41,7 +44,7 @@ async function fecthRandomMeal() {
         <div class="spMealName">
             <p class="randomMealName" id=${meal.idMeal}>${meal.strMeal}</p>
             <button class="likeBtn">
-                <i class="fa-regular fa-heart fa-xl" id=${meal.idMeal}></i>
+                <i class="${favMeals.includes(meal.idMeal)?"fa-solid":"fa-regular"} fa-heart fa-xl" id=${meal.idMeal}></i>
                 <!-- fa-solid  class-->
             </button>
         </div>
@@ -131,9 +134,14 @@ const smTextBtn = document.getElementById('smTextBtn')
 
 async function searchdata(searchMeal) {
     specialMeal.classList.add('dis-none')
+
     textBlock()
+
     const smMeals = document.createElement('div')
     smMeals.classList.add('smMeals')
+
+    const favMeals=getMealIdFromLs()
+
     smMeals.innerHTML = `
     <div class="smMeal">
         <div class="smImg ">
@@ -144,7 +152,7 @@ async function searchdata(searchMeal) {
             <div class="smBtns">
                 <button class="smlinkBtn getRecipeBtn" id=${searchMeal.idMeal}>Get Recipe</button>
                 <button class="likeBtn smlikeBtn" >
-                    <i class="fa-regular fa-heart fa-xl" id=${searchMeal.idMeal}></i>
+                    <i class="${favMeals.includes(searchMeal.idMeal)?"fa-solid":"fa-regular"} fa-heart fa-xl" id=${searchMeal.idMeal}></i>
                 </button>
             </div>
             <div class="watchYtBtn">
@@ -312,7 +320,7 @@ async function fetchInfoById(mealId) {
         return data.meals[0]
     }
     catch (err) {
-        
+
     }
 
 }
@@ -320,9 +328,13 @@ async function fetchInfoById(mealId) {
 
 async function showInfo(mealid) {
     const meal = await fetchInfoById(mealid)
-    infoContainer.classList.remove('dis-none')
+
     const infoDiv = document.createElement('div')
     infoDiv.classList.add('infoWindow')
+
+    infoContainer.classList.remove('dis-none')
+
+    const favMeals = getMealIdFromLs()
 
     const ingredients = []
     for (let i = 1; i < 30; i++) {
@@ -348,9 +360,13 @@ async function showInfo(mealid) {
             <div class="proced">
             ${meal.strInstructions}
             </div>
-            <i class="fa-regular fa-heart fa-xl infoLikeBtn" id=${meal.idMeal}></i>
+            <i 
+            class="${favMeals.includes(meal.idMeal) ? "fa-solid":"fa-regular"} fa-heart fa-xl infoLikeBtn"
+            id=${meal.idMeal}></i>  
             <button class="infoClose-btn"> Close </button>
     `
+    // ${favMeals.includes(meal.idMeal) ? "fa-solid fa-heart fa-xl infoLikeBtn" : "fa-regular fa-heart fa-xl infoLikeBtn"} 
+    
     const closeBtn = infoDiv.querySelector('.closeInfoBtn')
     const infoClose = infoDiv.querySelector('.infoClose-btn')
     const infoLikeBtn = infoDiv.querySelector(".infoLikeBtn")
