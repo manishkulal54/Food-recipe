@@ -1,0 +1,587 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* main container */
+.mainContainer {
+    width: max-content;
+    overflow-x: hidden;
+    min-height: 600px;
+    height: 100vh;
+}
+
+/* header */
+.header {
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.mainLogo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* header logo */
+.header .logo {
+    margin-bottom: 20px;
+}
+.header .logo h1{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+
+/* header search field */
+.header .searchField {
+    margin-left: 20px;
+}
+
+.header .searchField input {
+    width: 30vw;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.header .searchField button {
+    width: 5vw;
+    height: 5vh;
+    border-radius: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.errorSpan{
+    color: red;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* fav meals */
+.favMealsList {
+    width: 100vw;
+    height: 170px;
+    /* margin-bottom: 50px; */
+}
+
+.favtext {
+    text-align: center;
+    text-decoration: underline;
+    margin: 20px 0;
+}
+
+.favMeal_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+/* favorite scrollbar  */
+.favMeal_container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.favMeal_container::-webkit-scrollbar-track {
+    border: none;
+    background: none;
+}
+
+.favMeal_container::-webkit-scrollbar-thumb {
+    background-color: #c7c7c0;
+    border-radius: 20px;
+}
+
+.favMeal_container::-webkit-scrollbar-thumb:hover {
+    background: #cfb107;
+}
+
+/* favMeal box  */
+.favMeal {
+    min-width: 120px;
+    max-width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.closeFavMeal {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0px;
+    font-size: 22px;
+    visibility: hidden;
+    /* opacity: 0; */
+}
+
+.favMeal:hover .closeFavMeal {
+    visibility: visible;
+    fill: red;
+}
+
+/* favorite image container */
+.favMealimg_Container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+/* fav img */
+.favMealimg {
+    vertical-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* fav image name */
+.favMealName p {
+    text-align: center;
+    white-space: nowrap;
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+/* special meal  */
+.specialMeal {
+    height: 350px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+}
+
+/* special meal title */
+.specialMeal .sp-text {
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+
+/* special meal container */
+.specialMeal .spContainer {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* spoeacial meal image container */
+.spImg_container {
+    height: 75%;
+    width: 70%;
+    min-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* sp img */
+.spImg_container .spimg {
+    border-radius: 10px;
+    width: 90%;
+    height: 250px;
+    cursor: pointer;
+}
+
+/* special image text container */
+.specialMeal .spContainer .spMealName {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* speacial meal name */
+.spMealName p {
+    margin-left: 15%;
+    width: 80%;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* like button */
+.spMealName button {
+    width: 20%;
+    float: end;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10%;
+}
+
+/* like icon */
+.spMealName button i {
+    font-size: 30px;
+}
+
+/* search Meal container */
+.smContainer {
+    margin-top: 75px;    
+    width: 100vw;
+    height: max-content;
+    overflow-x: hidden;
+}
+
+/* search heading */
+.smtext {
+    width: 100vw;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.smtext h2 {
+    font-weight: 400;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+/* meals container */
+.smMeals {
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* meal box */
+.smMeal {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 20px 0px;
+    border-radius: 20px;
+    border: 1px solid #b5adad;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* imge div in meal box */
+.smMeal .smImg {
+    width: 40%;
+    height: max-content;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* imge  in meal box */
+.smMeal .smImg img {
+    margin: 10px 0;
+    width: 30vw;
+    border-radius: 20px;
+}
+
+/* different options in meal box */
+.smMeal .smOptions {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.smOptions p:nth-child(1) {
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.smBtns {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smlinkBtn {
+    height: 40px;
+    width: 15vw;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.smlikeBtn {
+    width: fit-content;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smlikeBtn i {
+    font-size: 40px;
+}
+
+.watchYtBtn {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watchYtBtn button {
+    width: max-content;
+    height: 40px;
+}
+
+.watchYtBtn button a {
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+}
+
+.infoScreenContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoWindow {
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    position: relative;
+}
+.closeInfoBtn{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.infoWindow::-webkit-scrollbar{
+    display: none;
+}
+.infoImg{
+    margin-top: 20px;
+    width: max-content;
+    height: fit-content;
+}
+.infoImg img{
+    width: 35vw;
+    border-radius: 20px;
+}
+.infoWindow .info-p{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.ingredients{
+    height: max-content;
+    width: max-content;
+    margin: 20px 0;
+}
+.ingredients p{
+    margin: 5px 0;
+    font-family: 'Roboto', sans-serif;
+}
+.infoWindow .proced{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.infoClose-btn{
+    margin: 10px 0;
+    width: 15vw;
+    min-height: 32px;
+    border-radius: 20px;
+    border: 2px solid;
+    cursor: pointer;
+}
+.infoClose-btn:hover{
+    background: red;
+    color: white;
+}
+.infoLikeBtn{
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+/* footer */
+footer{
+    margin-top: 30px;
+    height: max-content;
+}
+.foot-links{
+    height: 50%;
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.foot-links div{
+    display:flex;
+    flex-direction: row;
+}
+.foot-links div button{
+    width: max-content;
+    height: max-content;
+    border: none;
+    background: none;
+    margin: 10px 20px;
+}
+.copyright{
+    text-align: center;
+}
+
+/* for mobile and tablets */
+@media only screen and (max-width:800px) {
+    .header {
+        flex-direction: column;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .mainLogo {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .header .searchField {
+        width: 80%;
+    }
+
+    .header .searchField input {
+        width: 90%;
+    }
+
+    .closeFavMeal {
+        visibility: visible;
+    }
+    .smContainer {
+        margin-top: 30px;
+    }
+
+    .smMeals {
+        min-height: 250px;
+    }
+
+    .smMeal {
+        min-height: 211px;
+    }
+
+    .smMeal .smImg {
+        width: 50%;
+        height: 202px;
+        margin-left: 5px;
+    }
+
+    .smMeal .smImg img {
+        width: 100%;
+    }
+
+    .smOptions p:nth-child(1) {
+        font-size: 1rem;
+    }
+
+    .smBtns {
+        height: max-content;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .smBtns button:nth-child(1) {
+        margin: 0 0 5px 0;
+        width: 30vw;
+        background-color: rgb(234, 243, 243);
+        border-radius: 10px;
+        border: 0.5px solid;
+        cursor: pointer;
+    }
+
+    .smBtns button:nth-child(2) {
+        margin: 5px 0 0 0;
+    }
+
+    .watchYtBtn button {
+        height: 30px;
+        background: none;
+        border: 0.5px solid;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .watchYtBtn button a {
+        font-size: 12px;
+    }
+
+    .infoImg img {
+        width: 60vw;
+    }
+
+    .infoClose-btn {
+        width: 38vw;
+        min-height: 37px;
+    }
+
+    .infoLikeBtn {
+        font-size: 35px;
+    }
+
+    .infoWindow .proced {
+        text-align: justify;
+    }
+
+}
